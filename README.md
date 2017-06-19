@@ -17,9 +17,36 @@ Specifically testing your current security products whether automated or manual.
 
 **Host**
 
+***Signature Testing***
+
+***Application Whitelisting Bypasses***
+
+[Application Whitelist Auditor - Airlock Digital](https://www.airlockdigital.com/application-whitelisting-auditor/)
+
+[AllTheThings - SubTee](https://github.com/subTee/AllTheThings)
+
+[Bypass Techniques - SubTee](https://github.com/subTee/ApplicationWhitelistBypassTechniques)
+
+
 **Network**
 
+***PCAP replay***
+
+I'm finding that PCAP replay may be the most effective way to properly test security appliances that promise to detect or prevent all the things.
+
+
+***Firewall***
+
+[EgressBuster - TrustedSec](https://github.com/trustedsec/egressbuster)
+
+[Allports.Exposed - BHIS](https://www.blackhillsinfosec.com/?p=4811)
+
+[DNScat2-Powershell - BHIS](https://www.blackhillsinfosec.com/?p=5578&)
+
 # Phase 2
+
+***Adversary Testing***
+
 
 
 Look at this project as a way to save money, enhance your current security stack and test all the things.
