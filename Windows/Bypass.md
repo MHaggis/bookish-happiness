@@ -1,4 +1,4 @@
-#Bypasses
+# Bypasses
 
 ## Application Whitelisting
 

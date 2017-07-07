@@ -103,7 +103,11 @@ https://github.com/D4Vinci/Dr0p1t-Framework
 
 https://github.com/fdiskyou/PowerOPS
 
-csc.exe /unsafe /reference:"C:\path\to\System.Management.Automation.dll" /reference:System.IO.Compression.dll /out:C:\users\ieuser\desktop\PowerOPS_x64.exe /platform:x64 "C:\C:\Users\IEUser\Downloads\PowerOPS-1.0-beta\PowerOps\*.cs"
+    Copy ([PSObject].Assembly.Location) C:\
+
+Then:
+
+    csc.exe /unsafe /reference:"C:\System.Management.Automation.dll" /reference:System.IO.Compression.dll /out:C:\users\ieuser\desktop\PowerOPS_x64.exe /platform:x64 "C:\C:\Users\IEUser\Downloads\PowerOPS-1.0-beta\PowerOps\*.cs"
 
 # Other
 
