@@ -26,6 +26,10 @@ https://attack.mitre.org/w/images/f/f7/ATTaCK_Matrix_Notional.png
 
 Look at this project as a way to save money, enhance your current security stack and provide proper and actionable measurements.
 
+## DISCLAIMER:
+
+Do not use these tools for evil. Please use these tools and its output responsibly and only on systems on which you have explicit permission to access and run code.
+
 References:
 
 http://pwnwiki.io/#!index.md
