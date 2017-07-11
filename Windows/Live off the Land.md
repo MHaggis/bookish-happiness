@@ -58,9 +58,11 @@ Output:
 
     code here
 
-reg add hkcu\software\microsoft\windows\currentversion\run /v netshare /f /d %temp%\notilv.exe /t REG_EXPAND_SZ
+Examples:
 
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v ausMfTQVsuC /t REG_EXPAND_SZ /d "\"C:\Users\IEUser\AppData\Roaming\Oracle\bin\javaw.exe\" -jar \"C:\Users\IEUser\wBJLxnECLJF\FysHVwDWznz.ICgcjG\"" /f
+    reg add hkcu\software\microsoft\windows\currentversion\run /v netshare /f /d %temp%\notilv.exe /t REG_EXPAND_SZ
+
+    reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v ausMfTQVsuC /t REG_EXPAND_SZ /d "\"C:\Users\IEUser\AppData\Roaming\Oracle\bin\javaw.exe\" -jar \"C:\Users\IEUser\wBJLxnECLJF\FysHVwDWznz.ICgcjG\"" /f
 
 ## Netsh.exe
 
