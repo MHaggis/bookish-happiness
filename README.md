@@ -1,4 +1,4 @@
-# Build Your Own Adversary Simulator: Protect, Detect, Measure
+# CHARLIE: Protect, Detect, Measure
 
 
 # The Idea
