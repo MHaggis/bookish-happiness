@@ -39,13 +39,21 @@ Local User Enumeration:
 
     net user
 
+Local user add:
+
+    Net user /add Jack Pwndiddy1
+
+Add new user to localgroup:
+
+    net localgroup administrators jack /add
+
 Local Share Enumeration:
 
     net Share
 
 Remote Share Enumeration:
 
-    net share 
+    net share
 
 
 ## at.exe
